@@ -1,5 +1,266 @@
-<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HSC পাঠ্যপুস্তক সমগ্র</title><style>
-*{box-sizing:border-box}body{margin:0;background:#07111f;color:#fff;font-family:Arial,sans-serif}header{padding:18px 6%;background:#0d1b2d;position:sticky;top:0}.brand{font-size:23px;font-weight:bold}.hero{text-align:center;padding:65px 6%;background:radial-gradient(circle,#173d60,#07111f 65%)}h1{font-size:clamp(40px,7vw,68px);margin:18px 0}p{color:#aebdce}.search{width:min(700px,92%);padding:15px;border-radius:14px;border:1px solid #29415b;background:#091726;color:#fff;font-size:16px}main{width:88%;max-width:1200px;margin:auto;padding:35px 0 70px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.filter{padding:9px 14px;border-radius:30px;border:1px solid #29415b;background:#0c1b2d;color:#b9c8d8}.active{background:#123e38;color:#91f0cb}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:17px}.book{background:#0d1b2d;border:1px solid #1e344a;border-radius:16px;overflow:hidden}.cover{height:255px;padding:17px;display:flex;flex-direction:column;justify-content:space-between}.cover h2{font-size:27px}.icon{text-align:right;font-size:42px}.blue{background:linear-gradient(145deg,#1767a4,#102e4b)}.green{background:linear-gradient(145deg,#257853,#123d36)}.cyan{background:linear-gradient(145deg,#078082,#103c49)}.purple{background:linear-gradient(145deg,#60308c,#251943)}.gold{background:linear-gradient(145deg,#a66d2c,#52361d)}.dark{background:linear-gradient(145deg,#2c4055,#111d2b)}.teal{background:linear-gradient(145deg,#197e78,#123f43)}.orange{background:linear-gradient(145deg,#a75f39,#553321)}.info{padding:13px}.read{width:100%;padding:10px;border-radius:10px;border:1px solid #315c7d;background:#10283e;color:#b9ddfa}@media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}}@media(max-width:380px){.grid{grid-template-columns:1fr}}footer{text-align:center;padding:25px;border-top:1px solid #1c3045;color:#91a2b4}
-</style></head><body><header><div class="brand">📚 HSC পাঠ্যপুস্তক সমগ্র</div></header><section class="hero"><div>একাদশ–দ্বাদশ শ্রেণি • HSC</div><h1>তোমার পড়ার পথে,<br><span style="color:#72e3ba">জ্ঞানের সাথী</span></h1><p>HSC শিক্ষার্থীদের জন্য বিষয়ভিত্তিক অনলাইন পাঠ্যপুস্তক লাইব্রেরি</p><input id="s" class="search" placeholder="বই বা বিষয় খুঁজুন…"></section><main><h2>📖 বইয়ের সংগ্রহ</h2><div class="filters"><button class="filter active" data-c="all">সব</button><button class="filter" data-c="science">বিজ্ঞান</button><button class="filter" data-c="math">গণিত</button><button class="filter" data-c="humanities">মানবিক</button><button class="filter" data-c="business">ব্যবসায় শিক্ষা</button><button class="filter" data-c="other">অন্যান্য</button></div><div id="g" class="grid"></div></main><footer>HSC পাঠ্যপুস্তক সমগ্র • Study Smart, Learn Better 📚</footer><script>
-const b=[["বাংলা","মানবিক","gold","🌅"],["ইংরেজি","other","blue","🇬🇧"],["ICT","other","dark","💻"],["পদার্থবিজ্ঞান","science","blue","⚛️"],["রসায়ন","science","cyan","🧪"],["জীববিজ্ঞান","science","green","🧬"],["গণিত","math","dark","📐"],["উচ্চতর গণিত","math","purple","∑"],["ইতিহাস","humanities","gold","🏛️"],["ভূগোল","humanities","teal","🌍"],["সমাজবিজ্ঞান","humanities","dark","🏙️"],["রাষ্ট্রবিজ্ঞান","humanities","green","🏛️"],["অর্থনীতি","business","blue","📈"],["ইসলাম শিক্ষা","humanities","teal","🕌"],["গার্হস্থ্য বিজ্ঞান","other","orange","🌿"]];let c="all";function r(){let q=s.value.toLowerCase();g.innerHTML=b.filter(x=>(c=="all"||x[1]==c)&&(!q||x[0].toLowerCase().includes(q))).map(x=>`<article class="book"><div class="cover ${x[2]}"><small>HSC • একাদশ–দ্বাদশ</small><div><div class="icon">${x[3]}</div><h2>${x[0]}</h2><p>প্রথম পত্র ও দ্বিতীয় পত্র</p></div></div><div class="info"><button class="read" onclick="alert('অধ্যায় ও বৈধ অনলাইন/PDF লিংক পরের ধাপে যোগ হবে।')">📖 বই পড়ুন</button></div></article>`).join("")}s.oninput=r;document.querySelectorAll(".filter").forEach(x=>x.onclick=()=>{document.querySelectorAll(".filter").forEach(y=>y.classList.remove("active"));x.classList.add("active");c=x.dataset.c;r()});r();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSC পাঠ্যপুস্তক সমগ্র</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:linear-gradient(180deg,#061321,#07111f);
+color:#fff;
+}
+header{
+background:#0d2034;
+padding:22px 7%;
+font-size:25px;
+font-weight:bold;
+}
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+.hero{text-align:center;padding:40px 0}
+.hero small{font-size:20px}
+.hero h1{font-size:55px;margin:20px 0 10px}
+.hero h1 span{color:#65dfb7}
+.hero p{color:#aab8c6;font-size:20px}
+.search{
+width:100%;
+padding:18px 20px;
+border-radius:18px;
+border:1px solid #294761;
+background:#081a2a;
+color:white;
+font-size:18px;
+outline:none;
+}
+h2{font-size:32px;margin-top:55px}
+.filters{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin:20px 0;
+}
+.filter{
+padding:12px 20px;
+border:1px solid #294761;
+border-radius:25px;
+background:#0a1b2b;
+color:#d5e1ea;
+cursor:pointer;
+}
+.filter.active{
+background:#0d584b;
+color:#7ee5c1;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:22px;
+}
+.book{
+padding:25px;
+min-height:270px;
+border-radius:20px;
+background:linear-gradient(145deg,#17334a,#0d1d2c);
+border:1px solid #294761;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+.book .icon{font-size:42px}
+.book h3{font-size:28px;margin:15px 0}
+.book p{color:#aebdca;line-height:1.6}
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:11px 18px;
+border-radius:10px;
+background:#65dfb7;
+color:#062019;
+text-decoration:none;
+font-weight:bold;
+}
+footer{
+text-align:center;
+padding:40px 20px;
+color:#718394;
+}
+@media(max-width:600px){
+.hero h1{font-size:38px}
+header{font-size:20px}
+}
+</style>
+</head>
+
+<body>
+
+<header>📚 HSC পাঠ্যপুস্তক সমগ্র</header>
+
+<div class="container">
+
+<section class="hero">
+<small>একাদশ–দ্বাদশ শ্রেণি · HSC</small>
+<h1>তোমার পড়ার পথে,<br><span>জ্ঞানের সাথী</span></h1>
+<p>HSC শিক্ষার্থীদের জন্য বিষয়ভিত্তিক অনলাইন পাঠ্যপুস্তক লাইব্রেরি</p>
+
+<input
+class="search"
+id="search"
+type="text"
+placeholder="বই বা বিষয় খুঁজুন..."
+oninput="searchBooks()">
+</section>
+
+<h2>📖 বইয়ের সংগ্রহ</h2>
+
+<div class="filters">
+<button class="filter active" onclick="filterBooks('সব',this)">সব</button>
+<button class="filter" onclick="filterBooks('বিজ্ঞান',this)">বিজ্ঞান</button>
+<button class="filter" onclick="filterBooks('গণিত',this)">গণিত</button>
+<button class="filter" onclick="filterBooks('মানবিক',this)">মানবিক</button>
+<button class="filter" onclick="filterBooks('ব্যবসায় শিক্ষা',this)">ব্যবসায় শিক্ষা</button>
+<button class="filter" onclick="filterBooks('অন্যান্য',this)">অন্যান্য</button>
+</div>
+
+<div class="grid" id="books">
+
+<div class="book" data-category="মানবিক" data-name="বাংলা">
+<div class="icon">🌅</div>
+<h3>বাংলা</h3>
+<p>প্রথম পত্র ও দ্বিতীয় পত্র</p>
+<a class="btn" href="bangla.html">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="অন্যান্য" data-name="ইংরেজি">
+<div class="icon">🇬🇧</div>
+<h3>ইংরেজি</h3>
+<p>প্রথম পত্র ও দ্বিতীয় পত্র</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="অন্যান্য" data-name="ICT">
+<div class="icon">💻</div>
+<h3>ICT</h3>
+<p>তথ্য ও যোগাযোগ প্রযুক্তি</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="বিজ্ঞান" data-name="পদার্থবিজ্ঞান">
+<div class="icon">⚛️</div>
+<h3>পদার্থবিজ্ঞান</h3>
+<p>প্রথম পত্র ও দ্বিতীয় পত্র</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="বিজ্ঞান" data-name="রসায়ন">
+<div class="icon">🧪</div>
+<h3>রসায়ন</h3>
+<p>প্রথম পত্র ও দ্বিতীয় পত্র</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="বিজ্ঞান" data-name="জীববিজ্ঞান">
+<div class="icon">🧬</div>
+<h3>জীববিজ্ঞান</h3>
+<p>প্রথম পত্র ও দ্বিতীয় পত্র</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="গণিত" data-name="গণিত">
+<div class="icon">📐</div>
+<h3>গণিত</h3>
+<p>একাদশ–দ্বাদশ শ্রেণির গণিত</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="গণিত" data-name="উচ্চতর গণিত">
+<div class="icon">📊</div>
+<h3>উচ্চতর গণিত</h3>
+<p>প্রথম পত্র ও দ্বিতীয় পত্র</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="মানবিক" data-name="ইতিহাস">
+<div class="icon">🏛️</div>
+<h3>ইতিহাস</h3>
+<p>ইতিহাস বিষয়ের পাঠ্যপুস্তক</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="মানবিক" data-name="ভূগোল">
+<div class="icon">🌍</div>
+<h3>ভূগোল</h3>
+<p>ভূগোল ও পরিবেশ</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="মানবিক" data-name="সমাজবিজ্ঞান">
+<div class="icon">👥</div>
+<h3>সমাজবিজ্ঞান</h3>
+<p>সমাজবিজ্ঞান বিষয়ের বই</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="মানবিক" data-name="রাষ্ট্রবিজ্ঞান">
+<div class="icon">🏛️</div>
+<h3>রাষ্ট্রবিজ্ঞান</h3>
+<p>রাষ্ট্রবিজ্ঞান বিষয়ের বই</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="মানবিক" data-name="অর্থনীতি">
+<div class="icon">💰</div>
+<h3>অর্থনীতি</h3>
+<p>অর্থনীতি বিষয়ের পাঠ্যপুস্তক</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="অন্যান্য" data-name="ইসলাম শিক্ষা">
+<div class="icon">☪️</div>
+<h3>ইসলাম শিক্ষা</h3>
+<p>ইসলাম শিক্ষা বিষয়ের বই</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+<div class="book" data-category="অন্যান্য" data-name="গার্হস্থ্য বিজ্ঞান">
+<div class="icon">🏠</div>
+<h3>গার্হস্থ্য বিজ্ঞান</h3>
+<p>গার্হস্থ্য বিজ্ঞান বিষয়ের বই</p>
+<a class="btn" href="#">বই পড়ুন →</a>
+</div>
+
+</div>
+</div>
+
+<footer>
+© HSC পাঠ্যপুস্তক সমগ্র · তোমার পড়ার পথে, জ্ঞানের সাথী
+</footer>
+
+<script>
+function filterBooks(category,button){
+document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+
+document.querySelectorAll(".book").forEach(book=>{
+book.style.display=
+category==="সব" || book.dataset.category===category
+?"block":"none";
+});
+}
+
+function searchBooks(){
+let q=document.getElementById("search").value.toLowerCase();
+
+document.querySelectorAll(".book").forEach(book=>{
+let name=book.dataset.name.toLowerCase();
+book.style.display=name.includes(q)?"block":"none";
+});
+}
+</script>
+
+</body>
+  </html>
