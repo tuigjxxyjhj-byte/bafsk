@@ -7,6 +7,7 @@
 <title>বাংলা | HSC পাঠ্যপুস্তক সমগ্র</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -20,6 +21,8 @@ body{
     min-height:100vh;
 }
 
+/* Header */
+
 header{
     padding:20px;
     border-bottom:1px solid rgba(255,255,255,.1);
@@ -32,11 +35,15 @@ header{
     font-size:16px;
 }
 
+/* Main container */
+
 .container{
     width:92%;
     max-width:850px;
     margin:auto;
 }
+
+/* Hero */
 
 .hero{
     text-align:center;
@@ -55,36 +62,43 @@ header{
 .hero p{
     color:#b9c7d8;
     margin-top:8px;
+    font-size:18px;
 }
+
+/* Cards */
 
 .card{
     background:rgba(255,255,255,.07);
     border:1px solid rgba(255,255,255,.1);
-    border-radius:18px;
-    padding:20px;
+    border-radius:20px;
+    padding:26px;
     margin-bottom:25px;
     box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 .card h2{
-    font-size:24px;
-    margin-bottom:18px;
+    font-size:27px;
+    margin-bottom:22px;
 }
+
+/* Toggle buttons */
 
 .toggle{
     width:100%;
     border:none;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.09);
     color:white;
-    padding:18px;
-    border-radius:12px;
-    margin-bottom:12px;
-    font-size:19px;
+    padding:19px 22px;
+    border-radius:14px;
+    margin-bottom:14px;
+    font-size:22px;
     text-align:left;
     cursor:pointer;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     transition:.2s;
 }
 
@@ -92,64 +106,85 @@ header{
     background:rgba(255,255,255,.14);
 }
 
-.toggle span{
-    font-size:24px;
+.toggle span:last-child{
+    font-size:28px;
+    font-weight:bold;
 }
+
+/* Lesson list */
 
 .lesson-list{
     display:none;
-    margin:-3px 0 15px;
+    margin:-3px 0 16px;
 }
 
 .lesson-list.show{
     display:block;
 }
 
+/* Individual lesson */
+
 .lesson{
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:15px;
-    padding:15px;
-    margin:8px 0;
-    background:rgba(0,0,0,.2);
-    border-radius:10px;
+
+    padding:16px;
+    margin:9px 0;
+
+    background:rgba(0,0,0,.22);
+    border-radius:11px;
+
     border:1px solid rgba(255,255,255,.06);
 }
 
 .lesson-title{
-    font-size:16px;
+    font-size:17px;
     line-height:1.5;
 }
 
 .author{
-    color:#9fb2c8;
+    color:#aebed0;
     font-size:14px;
+    margin-top:3px;
 }
+
+/* Read button */
 
 .btn{
     text-decoration:none;
     color:white;
     background:#1769aa;
-    padding:8px 13px;
+
+    padding:9px 14px;
     border-radius:8px;
+
     white-space:nowrap;
     font-size:14px;
+
+    transition:.2s;
 }
 
 .btn:hover{
     background:#2186d1;
 }
 
+/* Second paper */
+
 .second-item{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:16px;
-    margin:8px 0;
-    background:rgba(0,0,0,.2);
-    border-radius:10px;
+
+    padding:17px;
+    margin:9px 0;
+
+    background:rgba(0,0,0,.22);
+    border-radius:11px;
 }
+
+/* Footer */
 
 footer{
     text-align:center;
@@ -158,14 +193,30 @@ footer{
     font-size:14px;
 }
 
+
+/* Mobile */
+
 @media(max-width:600px){
 
     .hero h1{
-        font-size:30px;
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
     }
 
     .card{
-        padding:15px;
+        padding:18px;
+    }
+
+    .card h2{
+        font-size:24px;
+    }
+
+    .toggle{
+        font-size:20px;
+        padding:18px;
     }
 
     .lesson{
@@ -177,308 +228,771 @@ footer{
     }
 
     .btn{
-        padding:7px 10px;
+        padding:8px 10px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <div class="container">
-        <a href="index.html" class="back">← হোম পেজে ফিরে যাও</a>
+
+        <a href="index.html" class="back">
+            ← হোম পেজে ফিরে যাও
+        </a>
+
     </div>
+
 </header>
+
+
 
 <div class="container">
 
-    <section class="hero">
-        <div class="icon">📚</div>
-        <h1>বাংলা</h1>
-        <p>একাদশ–দ্বাদশ শ্রেণি · HSC</p>
-    </section>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="icon">
+        📚
+    </div>
+
+    <h1>
+        বাংলা
+    </h1>
+
+    <p>
+        একাদশ–দ্বাদশ শ্রেণি · HSC
+    </p>
+
+</section>
 
 
-    <!-- বাংলা ১ম পত্র -->
 
-    <section class="card">
+<!-- ================================================= -->
+<!--                 বাংলা ১ম পত্র                    -->
+<!-- ================================================= -->
 
-        <h2>📖 বাংলা ১ম পত্র</h2>
+<section class="card">
+
+    <h2>
+        📖 বাংলা ১ম পত্র
+    </h2>
 
 
-        <!-- গদ্য -->
+    <!-- ================= গদ্য ================= -->
 
-        <button class="toggle" onclick="toggleSection('prose', this)">
-            <span>📖 গদ্য</span>
-            <span>+</span>
-        </button>
+    <button class="toggle"
+            onclick="toggleSection('prose', this)">
 
-        <div id="prose" class="lesson-list">
+        <span>
+            📖 গদ্য
+        </span>
 
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১. বাংলার নব্য লেখকদিগের প্রতি নিবেদন
-                    <div class="author">— বঙ্কিমচন্দ্র চট্টোপাধ্যায়</div>
+        <span>
+            +
+        </span>
+
+    </button>
+
+
+    <div id="prose" class="lesson-list">
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১. বাংলার নব্য লেখকদিগের প্রতি নিবেদন
+
+                <div class="author">
+                    — বঙ্কিমচন্দ্র চট্টোপাধ্যায়
                 </div>
-                <a href="#" class="btn">পড়ুন</a>
+
             </div>
 
-            <div class="lesson">
-                <div class="lesson-title">
-                    ২. অপরিচিতা
-                    <div class="author">— রবীন্দ্রনাথ ঠাকুর</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৩. সাহিত্যে খেলা
-                    <div class="author">— প্রমথ চৌধুরী</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৪. বিলাসী
-                    <div class="author">— শরৎচন্দ্র চট্টোপাধ্যায়</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৫. অর্ধাঙ্গী
-                    <div class="author">— রোকেয়া সাখাওয়াত হোসেন</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৬. যৌবনের গান
-                    <div class="author">— কাজী নজরুল ইসলাম</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৭. জীবন ও বৃক্ষ
-                    <div class="author">— মোতাহের হোসেন চৌধুরী</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৮. গন্তব্য কাবুল
-                    <div class="author">— সৈয়দ মুজতবা আলী</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৯. মাসি-পিসি
-                    <div class="author">— মানিক বন্দ্যোপাধ্যায়</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১০. কপিলদাস মুর্মুর শেষ কাজ
-                    <div class="author">— শওকত আলী</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১১. রেইনকোট
-                    <div class="author">— আখতারুজ্জামান ইলিয়াস</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১২. নেকলেস
-                    <div class="author">— গী দ্য মোপাসাঁ</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
 
         </div>
 
 
-        <!-- কবিতা -->
 
-        <button class="toggle" onclick="toggleSection('poetry', this)">
-            <span>📝 কবিতা</span>
-            <span>+</span>
-        </button>
+        <div class="lesson">
 
-        <div id="poetry" class="lesson-list">
+            <div class="lesson-title">
 
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১. ঋতু-বর্ণন
-                    <div class="author">— আলাওল</div>
+                ২. অপরিচিতা
+
+                <div class="author">
+                    — রবীন্দ্রনাথ ঠাকুর
                 </div>
-                <a href="#" class="btn">পড়ুন</a>
+
             </div>
 
-            <div class="lesson">
-                <div class="lesson-title">
-                    ২. বিভীষণের প্রতি মেঘনাদ
-                    <div class="author">— মাইকেল মধুসূদন দত্ত</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৩. সোনার তরী
-                    <div class="author">— রবীন্দ্রনাথ ঠাকুর</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৪. বিদ্রোহী
-                    <div class="author">— কাজী নজরুল ইসলাম</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৫. সুচেতনা
-                    <div class="author">— জীবনানন্দ দাশ</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৬. প্রতিদান
-                    <div class="author">— জসীমউদ্দীন</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৭. তাহারেই পড়ে মনে
-                    <div class="author">— সুফিয়া কামাল</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৮. পদ্মা
-                    <div class="author">— ফরুখ আহমদ</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ৯. ফেব্রুয়ারি ১৯৬৯
-                    <div class="author">— শামসুর রাহমান</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১০. আঠার বছর বয়স
-                    <div class="author">— সুকান্ত ভট্টাচার্য</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১১. আমি কিংবদন্তির কথা বলছি
-                    <div class="author">— আবু জাফর ওবায়দুল্লাহ</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-title">
-                    ১২. প্রত্যাবর্তনের লজ্জা
-                    <div class="author">— আল মাহমুদ</div>
-                </div>
-                <a href="#" class="btn">পড়ুন</a>
-            </div>
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
 
         </div>
 
-    </section>
 
 
-    <!-- বাংলা ২য় পত্র — আগের অংশ -->
+        <div class="lesson">
 
-    <section class="card">
+            <div class="lesson-title">
 
-        <h2>📝 বাংলা ২য় পত্র</h2>
+                ৩. সাহিত্যে খেলা
 
-        <div class="second-item">
-            <span>বাংলা ব্যাকরণ</span>
-            <a href="#" class="btn">পড়ুন</a>
+                <div class="author">
+                    — প্রমথ চৌধুরী
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
         </div>
 
-        <div class="second-item">
-            <span>রচনামূলক অংশ</span>
-            <a href="#" class="btn">পড়ুন</a>
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৪. বিলাসী
+
+                <div class="author">
+                    — শরৎচন্দ্র চট্টোপাধ্যায়
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
         </div>
 
-        <div class="second-item">
-            <span>অনুবাদ</span>
-            <a href="#" class="btn">পড়ুন</a>
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৫. অর্ধাঙ্গী
+
+                <div class="author">
+                    — রোকেয়া সাখাওয়াত হোসেন
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
         </div>
 
-        <div class="second-item">
-            <span>প্রবন্ধ রচনা</span>
-            <a href="#" class="btn">পড়ুন</a>
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৬. যৌবনের গান
+
+                <div class="author">
+                    — কাজী নজরুল ইসলাম
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
         </div>
 
-    </section>
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৭. জীবন ও বৃক্ষ
+
+                <div class="author">
+                    — মোতাহের হোসেন চৌধুরী
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৮. গন্তব্য কাবুল
+
+                <div class="author">
+                    — সৈয়দ মুজতবা আলী
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৯. মাসি-পিসি
+
+                <div class="author">
+                    — মানিক বন্দ্যোপাধ্যায়
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১০. কপিলদাস মুর্মুর শেষ কাজ
+
+                <div class="author">
+                    — শওকত আলী
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১১. রেইনকোট
+
+                <div class="author">
+                    — আখতারুজ্জামান ইলিয়াস
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১২. নেকলেস
+
+                <div class="author">
+                    — গী দ্য মোপাসাঁ
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= কবিতা ================= -->
+
+    <button class="toggle"
+            onclick="toggleSection('poetry', this)">
+
+        <span>
+            📝 কবিতা
+        </span>
+
+        <span>
+            +
+        </span>
+
+    </button>
+
+
+    <div id="poetry" class="lesson-list">
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১. ঋতু-বর্ণন
+
+                <div class="author">
+                    — আলাওল
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ২. বিভীষণের প্রতি মেঘনাদ
+
+                <div class="author">
+                    — মাইকেল মধুসূদন দত্ত
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৩. সোনার তরী
+
+                <div class="author">
+                    — রবীন্দ্রনাথ ঠাকুর
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৪. বিদ্রোহী
+
+                <div class="author">
+                    — কাজী নজরুল ইসলাম
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৫. সুচেতনা
+
+                <div class="author">
+                    — জীবনানন্দ দাশ
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৬. প্রতিদান
+
+                <div class="author">
+                    — জসীমউদ্দীন
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৭. তাহারেই পড়ে মনে
+
+                <div class="author">
+                    — সুফিয়া কামাল
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৮. পদ্মা
+
+                <div class="author">
+                    — ফরুখ আহমদ
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ৯. ফেব্রুয়ারি ১৯৬৯
+
+                <div class="author">
+                    — শামসুর রাহমান
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১০. আঠার বছর বয়স
+
+                <div class="author">
+                    — সুকান্ত ভট্টাচার্য
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১১. আমি কিংবদন্তির কথা বলছি
+
+                <div class="author">
+                    — আবু জাফর ওবায়দুল্লাহ
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১২. প্রত্যাবর্তনের লজ্জা
+
+                <div class="author">
+                    — আল মাহমুদ
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= সহপাঠ ================= -->
+
+    <button class="toggle"
+            onclick="toggleSection('shohopath', this)">
+
+        <span>
+            📚 সহপাঠ
+        </span>
+
+        <span>
+            +
+        </span>
+
+    </button>
+
+
+    <div id="shohopath" class="lesson-list">
+
+
+        <!-- লালসালু -->
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ১. লালসালু
+
+                <div class="author">
+                    — সৈয়দ ওয়ালীউল্লাহ
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+
+        <!-- সিরাজউদ্দৌলা -->
+
+        <div class="lesson">
+
+            <div class="lesson-title">
+
+                ২. সিরাজউদ্দৌলা
+
+                <div class="author">
+                    — সিকান্দার আবু জাফর
+                </div>
+
+            </div>
+
+            <a href="#" class="btn">
+                পড়ুন
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!--                 বাংলা ২য় পত্র                    -->
+<!-- ================================================= -->
+
+<section class="card">
+
+    <h2>
+        📝 বাংলা ২য় পত্র
+    </h2>
+
+
+    <div class="second-item">
+
+        <span>
+            বাংলা ব্যাকরণ
+        </span>
+
+        <a href="#" class="btn">
+            পড়ুন
+        </a>
+
+    </div>
+
+
+
+    <div class="second-item">
+
+        <span>
+            রচনামূলক অংশ
+        </span>
+
+        <a href="#" class="btn">
+            পড়ুন
+        </a>
+
+    </div>
+
+
+
+    <div class="second-item">
+
+        <span>
+            অনুবাদ
+        </span>
+
+        <a href="#" class="btn">
+            পড়ুন
+        </a>
+
+    </div>
+
+
+
+    <div class="second-item">
+
+        <span>
+            প্রবন্ধ রচনা
+        </span>
+
+        <a href="#" class="btn">
+            পড়ুন
+        </a>
+
+    </div>
+
+
+</section>
+
 
 </div>
 
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
     HSC পাঠ্যপুস্তক সমগ্র © 2026
+
 </footer>
 
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
 function toggleSection(id, button){
 
     const section = document.getElementById(id);
+
     const icon = button.querySelector("span:last-child");
 
     section.classList.toggle("show");
 
+
     if(section.classList.contains("show")){
+
         icon.textContent = "−";
+
     }else{
+
         icon.textContent = "+";
+
     }
 
 }
 
 </script>
+
 
 </body>
     </html>
