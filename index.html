@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HSC পাঠ্যপুস্তক সমগ্র</title>
-
-  <meta name="description"
-        content="HSC পাঠ্যপুস্তক সমগ্র — একাদশ ও দ্বাদশ শ্রেণির বিভিন্ন বিষয়ের পাঠ্যবই একসাথে।">
+  <title>বাংলা — HSC পাঠ্যপুস্তক সমগ্র</title>
 
   <style>
     * {
@@ -25,136 +22,137 @@
 
     header {
       text-align: center;
-      padding: 35px 15px 25px;
+      padding: 30px 15px 20px;
     }
 
     header h1 {
       font-size: 32px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     header p {
       color: #cbd5e1;
-      font-size: 16px;
     }
 
     .container {
       width: 92%;
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding-bottom: 50px;
     }
 
-    /* Search */
-    .search-box {
-      margin: 20px auto 25px;
-      max-width: 600px;
+    .back {
+      display: inline-block;
+      margin: 10px 0 20px;
+      color: #93c5fd;
+      text-decoration: none;
     }
 
-    .search-box input {
-      width: 100%;
-      padding: 15px 18px;
-      border-radius: 12px;
-      border: 1px solid #475569;
-      outline: none;
-      background: #1e293b;
-      color: white;
-      font-size: 16px;
-    }
-
-    .search-box input::placeholder {
-      color: #94a3b8;
-    }
-
-    /* Category buttons */
-    .filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .filter-btn {
-      padding: 9px 16px;
-      border: 1px solid #475569;
-      border-radius: 20px;
-      background: #1e293b;
-      color: white;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .filter-btn:hover {
-      background: #334155;
-    }
-
-    /* Books grid */
-    .books {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .book-card {
-      background: rgba(30, 41, 59, 0.95);
+    .subject-card {
+      background: rgba(30, 41, 59, 0.96);
       border: 1px solid #334155;
       border-radius: 18px;
       padding: 22px;
-      transition: 0.25s;
+      margin-bottom: 25px;
     }
 
-    .book-card:hover {
-      transform: translateY(-5px);
-      border-color: #64748b;
+    .subject-card h2 {
+      font-size: 25px;
+      margin-bottom: 20px;
     }
 
-    .book-icon {
-      font-size: 40px;
+    /* বিভাগ */
+    .section {
+      border: 1px solid #475569;
+      border-radius: 12px;
       margin-bottom: 12px;
+      overflow: hidden;
     }
 
-    .book-card h2 {
-      font-size: 21px;
-      margin-bottom: 8px;
+    .section-title {
+      width: 100%;
+      padding: 16px 18px;
+      background: #1e293b;
+      color: white;
+      border: none;
+      text-align: left;
+      font-size: 18px;
+      cursor: pointer;
     }
 
-    .book-card p {
-      color: #cbd5e1;
-      font-size: 14px;
+    .section-title:hover {
+      background: #334155;
+    }
+
+    .section-content {
+      display: none;
+      padding: 10px;
+      background: #0f172a;
+    }
+
+    .book {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 10px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .book:last-child {
+      border-bottom: none;
+    }
+
+    .book-info {
       line-height: 1.6;
-      min-height: 45px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 17px;
+    .book-number {
+      color: #93c5fd;
+      font-weight: bold;
+    }
+
+    .book-name {
+      font-size: 16px;
+    }
+
+    .author {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .read-btn {
+      flex-shrink: 0;
       background: #2563eb;
       color: white;
       text-decoration: none;
-      border-radius: 9px;
-      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
     }
 
-    .btn:hover {
+    .read-btn:hover {
       background: #1d4ed8;
     }
 
     footer {
       text-align: center;
-      padding: 25px 10px;
       color: #94a3b8;
+      padding: 25px;
       font-size: 13px;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 26px;
+        font-size: 27px;
       }
 
-      .books {
-        grid-template-columns: 1fr;
+      .book {
+        align-items: flex-start;
+      }
+
+      .read-btn {
+        margin-top: 3px;
       }
     }
   </style>
@@ -162,279 +160,463 @@
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>📚 HSC পাঠ্যপুস্তক সমগ্র</h1>
-    <p>তোমার পড়ার পথে, জ্ঞানের সাথী</p>
-  </header>
+<header>
+  <h1>📖 বাংলা</h1>
+  <p>HSC বাংলা পাঠ্যপুস্তক</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <!-- Search -->
-    <div class="search-box">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 বই বা বিষয় খুঁজুন..."
-        onkeyup="searchBooks()"
-      >
+  <a class="back" href="index.html">← সব বইয়ের গুচ্ছে ফিরে যান</a>
+
+
+  <!-- ================================================= -->
+  <!-- বাংলা ১ম পত্র -->
+  <!-- ================================================= -->
+
+  <div class="subject-card">
+
+    <h2>📘 বাংলা ১ম পত্র</h2>
+
+
+    <!-- ১. গদ্য -->
+    <div class="section">
+
+      <button class="section-title" onclick="toggleSection('godyo')">
+        ১. গদ্য
+      </button>
+
+      <div class="section-content" id="godyo">
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১.</div>
+            <div class="book-name">
+              বাংলার নব্য লেখকদিগের প্রতি নিবেদন
+            </div>
+            <div class="author">
+              — বঙ্কিমচন্দ্র চট্টোপাধ্যায়
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">২.</div>
+            <div class="book-name">
+              অপরিচিতা
+            </div>
+            <div class="author">
+              — রবীন্দ্রনাথ ঠাকুর
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৩.</div>
+            <div class="book-name">
+              সাহিত্যে খেলা
+            </div>
+            <div class="author">
+              — প্রমথ চৌধুরী
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৪.</div>
+            <div class="book-name">
+              বিলাসী
+            </div>
+            <div class="author">
+              — শরৎচন্দ্র চট্টোপাধ্যায়
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৫.</div>
+            <div class="book-name">
+              অর্ধাঙ্গী
+            </div>
+            <div class="author">
+              — রোকেয়া সাখাওয়াত হোসেন
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৬.</div>
+            <div class="book-name">
+              যৌবনের গান
+            </div>
+            <div class="author">
+              — কাজী নজরুল ইসলাম
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৭.</div>
+            <div class="book-name">
+              জীবন ও বৃক্ষ
+            </div>
+            <div class="author">
+              — মোতাহের হোসেন চৌধুরী
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৮.</div>
+            <div class="book-name">
+              গন্তব্য কাবুল
+            </div>
+            <div class="author">
+              — সৈয়দ মুজতবা আলী
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৯.</div>
+            <div class="book-name">
+              মাসি-পিসি
+            </div>
+            <div class="author">
+              — মানিক বন্দ্যোপাধ্যায়
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১০.</div>
+            <div class="book-name">
+              কপিলদাস মুর্মুর শেষ কাজ
+            </div>
+            <div class="author">
+              — শওকত আলী
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১১.</div>
+            <div class="book-name">
+              রেইনকোট
+            </div>
+            <div class="author">
+              — আখতারুজ্জামান ইলিয়াস
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১২.</div>
+            <div class="book-name">
+              নেকলেস
+            </div>
+            <div class="author">
+              — গী দ্য মোপাসাঁ
+            </div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Filters -->
-    <div class="filters">
-      <button class="filter-btn" onclick="filterBooks('all')">সব বই</button>
-      <button class="filter-btn" onclick="filterBooks('science')">বিজ্ঞান</button>
-      <button class="filter-btn" onclick="filterBooks('arts')">মানবিক</button>
-      <button class="filter-btn" onclick="filterBooks('commerce')">ব্যবসায় শিক্ষা</button>
+
+    <!-- ২. কবিতা -->
+    <div class="section">
+
+      <button class="section-title" onclick="toggleSection('kobita')">
+        ২. কবিতা
+      </button>
+
+      <div class="section-content" id="kobita">
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১.</div>
+            <div class="book-name">ঋতু-বর্ণন</div>
+            <div class="author">— আলাওল</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">২.</div>
+            <div class="book-name">বিভীষণের প্রতি মেঘনাদ</div>
+            <div class="author">— মাইকেল মধুসূদন দত্ত</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৩.</div>
+            <div class="book-name">সোনার তরী</div>
+            <div class="author">— রবীন্দ্রনাথ ঠাকুর</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৪.</div>
+            <div class="book-name">বিদ্রোহী</div>
+            <div class="author">— কাজী নজরুল ইসলাম</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৫.</div>
+            <div class="book-name">সুচেতনা</div>
+            <div class="author">— জীবনানন্দ দাশ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৬.</div>
+            <div class="book-name">প্রতিদান</div>
+            <div class="author">— জসীমউদ্দীন</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৭.</div>
+            <div class="book-name">তাহারেই পড়ে মনে</div>
+            <div class="author">— সুফিয়া কামাল</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৮.</div>
+            <div class="book-name">পদ্মা</div>
+            <div class="author">— ফরুখ আহমদ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">৯.</div>
+            <div class="book-name">ফেব্রুয়ারি ১৯৬৯</div>
+            <div class="author">— শামসুর রাহমান</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১০.</div>
+            <div class="book-name">আঠারো বছর বয়স</div>
+            <div class="author">— সুকান্ত ভট্টাচার্য</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১১.</div>
+            <div class="book-name">আমি কিংবদন্তির কথা বলছি</div>
+            <div class="author">— আবু জাফর ওবায়দুল্লাহ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১২.</div>
+            <div class="book-name">প্রত্যাবর্তনের লজ্জা</div>
+            <div class="author">— আল মাহমুদ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+      </div>
     </div>
 
-    <!-- সব বই -->
-    <div class="books" id="bookList">
 
-      <!-- বাংলা -->
-      <div class="book-card" data-category="arts">
-        <div class="book-icon">📖</div>
-        <h2>বাংলা</h2>
-        <p>
-          বাংলা ১ম পত্র ও বাংলা ২য় পত্রের পাঠ্যবই।
-        </p>
+    <!-- ৩. সহপাঠ -->
+    <div class="section">
 
-        <!-- গুরুত্বপূর্ণ:
-             এখান থেকেই বাংলা বইয়ের আলাদা পেজে যাবে -->
-        <a class="btn" href="bangla.html">
-          বাংলা বই পড়ুন →
-        </a>
+      <button class="section-title" onclick="toggleSection('sohopath')">
+        ৩. সহপাঠ
+      </button>
+
+      <div class="section-content" id="sohopath">
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">১.</div>
+            <div class="book-name">লালসালু</div>
+            <div class="author">— সৈয়দ ওয়ালীউল্লাহ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
+        <div class="book">
+          <div class="book-info">
+            <div class="book-number">২.</div>
+            <div class="book-name">সিরাজউদ্দৌলা</div>
+            <div class="author">— সিকান্দার আবু জাফর</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+
       </div>
-
-      <!-- ইংরেজি -->
-      <div class="book-card" data-category="arts">
-        <div class="book-icon">📘</div>
-        <h2>ইংরেজি</h2>
-        <p>
-          English 1st Paper ও English 2nd Paper।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- ICT -->
-      <div class="book-card" data-category="science">
-        <div class="book-icon">💻</div>
-        <h2>তথ্য ও যোগাযোগ প্রযুক্তি</h2>
-        <p>
-          HSC ICT পাঠ্যবই ও অধ্যায়সমূহ।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- পদার্থবিজ্ঞান -->
-      <div class="book-card" data-category="science">
-        <div class="book-icon">⚛️</div>
-        <h2>পদার্থবিজ্ঞান</h2>
-        <p>
-          পদার্থবিজ্ঞান ১ম ও ২য় পত্র।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- রসায়ন -->
-      <div class="book-card" data-category="science">
-        <div class="book-icon">🧪</div>
-        <h2>রসায়ন</h2>
-        <p>
-          রসায়ন ১ম ও ২য় পত্র।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- জীববিজ্ঞান -->
-      <div class="book-card" data-category="science">
-        <div class="book-icon">🧬</div>
-        <h2>জীববিজ্ঞান</h2>
-        <p>
-          জীববিজ্ঞান ১ম ও ২য় পত্র।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- উচ্চতর গণিত -->
-      <div class="book-card" data-category="science">
-        <div class="book-icon">📐</div>
-        <h2>উচ্চতর গণিত</h2>
-        <p>
-          উচ্চতর গণিত ১ম ও ২য় পত্র।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- সাধারণ গণিত -->
-      <div class="book-card" data-category="science">
-        <div class="book-icon">➗</div>
-        <h2>গণিত</h2>
-        <p>
-          HSC গণিতের পাঠ্যবই।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- অর্থনীতি -->
-      <div class="book-card" data-category="arts">
-        <div class="book-icon">📊</div>
-        <h2>অর্থনীতি</h2>
-        <p>
-          অর্থনীতি ১ম ও ২য় পত্র।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- হিসাববিজ্ঞান -->
-      <div class="book-card" data-category="commerce">
-        <div class="book-icon">🧾</div>
-        <h2>হিসাববিজ্ঞান</h2>
-        <p>
-          হিসাববিজ্ঞান ১ম ও ২য় পত্র।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- ব্যবসায় সংগঠন -->
-      <div class="book-card" data-category="commerce">
-        <div class="book-icon">🏢</div>
-        <h2>ব্যবসায় সংগঠন ও ব্যবস্থাপনা</h2>
-        <p>
-          ব্যবসায় সংগঠন ও ব্যবস্থাপনা বিষয়ের বই।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- ফিন্যান্স -->
-      <div class="book-card" data-category="commerce">
-        <div class="book-icon">💰</div>
-        <h2>ফিন্যান্স ও ব্যাংকিং</h2>
-        <p>
-          ফিন্যান্স ও ব্যাংকিং বিষয়ের পাঠ্যবই।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- ইতিহাস -->
-      <div class="book-card" data-category="arts">
-        <div class="book-icon">🏛️</div>
-        <h2>ইতিহাস</h2>
-        <p>
-          ইতিহাস বিষয়ের পাঠ্যবই।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- পৌরনীতি -->
-      <div class="book-card" data-category="arts">
-        <div class="book-icon">⚖️</div>
-        <h2>পৌরনীতি ও সুশাসন</h2>
-        <p>
-          পৌরনীতি ও সুশাসন বিষয়ের পাঠ্যবই।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
-      <!-- সমাজবিজ্ঞান -->
-      <div class="book-card" data-category="arts">
-        <div class="book-icon">👥</div>
-        <h2>সমাজবিজ্ঞান</h2>
-        <p>
-          সমাজবিজ্ঞান বিষয়ের পাঠ্যবই।
-        </p>
-        <a class="btn" href="#">
-          বই পড়ুন →
-        </a>
-      </div>
-
     </div>
+
   </div>
 
-  <footer>
-    © 2026 HSC পাঠ্যপুস্তক সমগ্র
-  </footer>
+
+  <!-- ================================================= -->
+  <!-- বাংলা ২য় পত্র -->
+  <!-- ================================================= -->
+
+  <div class="subject-card">
+
+    <h2>📕 বাংলা ২য় পত্র</h2>
+
+    <div class="section">
+
+      <button class="section-title" onclick="toggleSection('grammar')">
+        বাংলা ব্যাকরণ
+      </button>
+
+      <div class="section-content" id="grammar">
+        <div class="book">
+          <div class="book-info">
+            <div class="book-name">বাংলা ব্যাকরণ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+      </div>
+
+    </div>
 
 
-  <!-- JavaScript -->
-  <script>
+    <div class="section">
 
-    /* বই খোঁজার ব্যবস্থা */
-    function searchBooks() {
+      <button class="section-title" onclick="toggleSection('rochona')">
+        রচনামূলক অংশ
+      </button>
 
-      const input = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+      <div class="section-content" id="rochona">
+        <div class="book">
+          <div class="book-info">
+            <div class="book-name">রচনামূলক অংশ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+      </div>
 
-      const books = document.querySelectorAll(".book-card");
+    </div>
 
-      books.forEach(function(book) {
 
-        const text = book.innerText.toLowerCase();
+    <div class="section">
 
-        if (text.includes(input)) {
-          book.style.display = "block";
-        } else {
-          book.style.display = "none";
-        }
+      <button class="section-title" onclick="toggleSection('translation')">
+        অনুবাদ
+      </button>
 
-      });
+      <div class="section-content" id="translation">
+        <div class="book">
+          <div class="book-info">
+            <div class="book-name">অনুবাদ</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="section">
+
+      <button class="section-title" onclick="toggleSection('essay')">
+        প্রবন্ধ রচনা
+      </button>
+
+      <div class="section-content" id="essay">
+        <div class="book">
+          <div class="book-info">
+            <div class="book-name">প্রবন্ধ রচনা</div>
+          </div>
+          <a href="#" class="read-btn">পড়ুন</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  © 2026 HSC পাঠ্যপুস্তক সমগ্র
+</footer>
+
+
+<script>
+
+  function toggleSection(id) {
+
+    const section = document.getElementById(id);
+
+    if (section.style.display === "block") {
+      section.style.display = "none";
+    } else {
+      section.style.display = "block";
     }
 
+  }
 
-    /* Category filter */
-    function filterBooks(category) {
-
-      const books = document.querySelectorAll(".book-card");
-
-      books.forEach(function(book) {
-
-        if (category === "all") {
-
-          book.style.display = "block";
-
-        } else if (book.dataset.category === category) {
-
-          book.style.display = "block";
-
-        } else {
-
-          book.style.display = "none";
-
-        }
-
-      });
-
-    }
-
-  </script>
+</script>
 
 </body>
-      </html>
+  </html>
